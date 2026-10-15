@@ -42,14 +42,19 @@ body{
     flex-direction: column;
     justify-content: space-between;
     justify-content: space-around;
-    height: 80%;
 }
 .tela_principal aside .opcoes div{
+    transition: 1s;
+    margin-top: 8px;
     border-radius: 16%;
     background-color: #FFCC00;
 }
+.tela_principal aside .opcoes div:hover{
+    background-color: #ff8800;
+}
 .tela_principal aside .opcoes div img{
-    width: 72px;
+    margin: 8px;
+    width: 46px;
     object-fit: cover;
 }
 .tela_principal aside .logo img{
