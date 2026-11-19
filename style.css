@@ -30,6 +30,7 @@ body{
     width: 32%;
 }
 .tela_principal aside{
+    
     display: flex;
     flex-direction: column;
     background-color: #0C0012;
