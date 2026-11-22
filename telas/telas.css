@@ -1,29 +1,23 @@
-body{
-    padding: 0;
-    margin: 0;
-    height: 200vh;
-    width: 100%;
-    background-color: black;
-}
-/* ===== PALETA (troque aqui para ajustar o estilo todo) ===== */
+/* ===== PALETA (baseada na tela de home) ===== */
 :root {
-  --bg: #000000;          /* fundo principal */
-  --side: #0d0014;        /* barra lateral */
-  --surface: #160d21;     /* cartões */
-  --field: #2a1a3d;       /* campos e barra de busca */
+  --bg: #000000;          /* fundo da página */
+  --surface: #160d21;     /* fundo dos blocos */
+  --field: #2a1a3d;       /* campos, selects e botões secundários */
   --line: #3a2752;        /* bordas */
   --gold: #ffcc00;        /* amarelo principal */
-  --gold-dim: #c9a300;    /* amarelo escuro (logo, detalhes) */
+  --gold-hover: #ffd93a;  /* amarelo ao passar o mouse */
+  --gold-dim: #c9a300;    /* amarelo escuro */
   --text: #f3eefa;
   --muted: #9b8db3;
   --radius: 14px;
 }
 
-* { box-sizing: border-box; margin: 0; }
+/* ===== BASE ===== */
+* { box-sizing: border-box; }
 
 body {
-  min-height: 100vh;
-  display: flex;
+  margin: 0;
+  padding: 40px 24px 64px;
   background: var(--bg);
   color: var(--text);
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -31,105 +25,99 @@ body {
   line-height: 1.5;
 }
 
-/* ===== BARRA LATERAL ===== */
-.sidebar {
-  width: 160px;
-  flex-shrink: 0;
-  background: linear-gradient(180deg, var(--side), #080010);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 0;
-}
-.logo {
-  width: 44px; height: 44px; margin-bottom: 6px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--bg) 0 5px, var(--gold-dim) 6px);
-}
-.nav-btn {
-  width: 62px; height: 62px;
-  display: grid; place-items: center;
-  border: 0; border-radius: 10px;
-  background: var(--gold); color: #000;
-  cursor: pointer;
-  transition: transform .15s, background .15s;
-}
-.nav-btn:hover { background: #ffd93a; transform: scale(1.05); }
-.nav-btn[aria-current="page"] { outline: 3px solid var(--text); outline-offset: 2px; }
-.nav-btn svg { width: 34px; height: 34px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+br { display: none; }
 
-/* ===== CONTEÚDO ===== */
-main {
-  flex: 1;
+form {
   max-width: 760px;
   margin: 0 auto;
-  padding: 28px 24px 48px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-h1 { font-size: 1.75rem; font-weight: 700; }
 
-.card {
+a { color: var(--gold); }
+a:hover { color: var(--gold-hover); }
+
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* ===== BLOCOS (cada seção é um bloco) ===== */
+form > section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px 24px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 20px 22px;
-}
-.card h2 {
-  font-size: 1.05rem;
-  color: var(--gold);
-  margin-bottom: 14px;
 }
 
-.row {
+h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+/* Seções originais: texto e campos soltos viram linhas de 2 colunas */
+.perfil, .config, .audio {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 18px 20px;
+}
+.perfil h2, .config h2, .audio h2 { grid-column: 1 / -1; }
+
+.perfil img { justify-self: start; }
+.perfil > div {
+  grid-column: 1 / -1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 12px 0;
-  border-top: 1px solid var(--line);
 }
-.card h2 + .row { border-top: 0; padding-top: 0; }
-.row:last-child { padding-bottom: 0; }
-.row label, .row .label { font-weight: 500; }
-.row .value { color: var(--muted); overflow-wrap: anywhere; text-align: right; }
 
-/* perfil */
-.profile-head { display: flex; align-items: center; gap: 16px; margin-bottom: 6px; }
-.avatar {
-  width: 56px; height: 56px; flex-shrink: 0;
-  display: grid; place-items: center;
-  border-radius: 12px; background: var(--gold); color: #000;
+/* Seções novas: cada opção é uma linha (texto à esquerda, controle à direita) */
+.opcao {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
 }
-.avatar img { height: 32px; }
-.profile-head .spacer { flex: 1; }
-.badge {
-  display: inline-block;
-  padding: 2px 12px;
-  border-radius: 999px;
+.opcao > :first-child { margin-right: auto; }
+.opcao label { cursor: pointer; }
+.opcao > span:last-child:not(:first-child) { color: var(--muted); }
+
+/* ===== BOTÕES ===== */
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+
+/* principais (amarelo) */
+.perfil button,
+.acoes button {
+  background: var(--gold);
+  color: #000;
+}
+.perfil button:hover,
+.acoes button:hover { background: var(--gold-hover); }
+
+/* secundários (roxo com texto amarelo) */
+.opcao button {
   background: var(--field);
   color: var(--gold);
-  font-weight: 600;
-  font-size: .9rem;
+  border: 1px solid var(--line);
 }
+.opcao button:hover { border-color: var(--gold); }
 
-/* botão */
-.btn {
-  border: 0; border-radius: 10px;
-  padding: 10px 18px;
-  background: var(--gold); color: #000;
-  font: inherit; font-weight: 600;
-  cursor: pointer;
-  transition: background .15s;
-}
-.btn:hover { background: #ffd93a; }
-
-/* selects */
+/* ===== SELECTS ===== */
 select {
   appearance: none;
-  min-width: 190px;
+  min-width: 210px;
   padding: 9px 38px 9px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -142,38 +130,94 @@ select {
 }
 select option { background: var(--surface); }
 
-/* interruptores (checkbox estilizado) */
-.switch {
+/* ===== CHECKBOX COMO INTERRUPTOR ===== */
+input[type="checkbox"] {
   appearance: none;
   position: relative;
-  width: 46px; height: 26px; flex-shrink: 0;
+  width: 46px;
+  height: 26px;
+  margin: 0;
+  flex-shrink: 0;
   border-radius: 999px;
   background: var(--field);
   border: 1px solid var(--line);
   cursor: pointer;
-  transition: background .2s;
+  transition: background .2s, border-color .2s;
 }
-.switch::after {
+input[type="checkbox"]::after {
   content: "";
-  position: absolute; top: 2px; left: 2px;
-  width: 20px; height: 20px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--muted);
   transition: transform .2s, background .2s;
 }
-.switch:checked { background: var(--gold-dim); border-color: var(--gold); }
-.switch:checked::after { transform: translateX(20px); background: var(--gold); }
-
-:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-
-/* ===== CELULAR ===== */
-@media (max-width: 640px) {
-  body { flex-direction: column; }
-  .sidebar { width: 100%; flex-direction: row; justify-content: center; flex-wrap: wrap; padding: 10px; }
-  .logo { margin: 0 6px 0 0; }
-  .nav-btn { width: 48px; height: 48px; }
-  .nav-btn svg { width: 26px; height: 26px; }
-  .row { flex-wrap: wrap; }
-  select { min-width: 0; width: 100%; }
-  .row:has(select) { flex-direction: column; align-items: stretch; gap: 8px; }
+input[type="checkbox"]:checked {
+  background: var(--gold-dim);
+  border-color: var(--gold);
 }
+input[type="checkbox"]:checked::after {
+  transform: translateX(20px);
+  background: var(--gold);
+}
+
+/* ===== SLIDERS E BARRA DE PROGRESSO ===== */
+input[type="range"] {
+  width: 220px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+progress {
+  appearance: none;
+  width: 200px;
+  height: 10px;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--field);
+}
+progress::-webkit-progress-bar { background: var(--field); }
+progress::-webkit-progress-value { background: var(--gold); }
+progress::-moz-progress-bar { background: var(--gold); }
+
+/* ===== EQUALIZADOR ===== */
+.equalizador fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.equalizador legend {
+  padding: 0 8px;
+  font-size: .9rem;
+  color: var(--muted);
+}
+.banda {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+.banda input[type="range"] { width: 100%; }
+
+/* ===== BOTÃO SALVAR + LINK DE VOLTAR (bloco separado) ===== */
+.acoes { gap: 14px; }
+.acoes button {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1.05rem;
+}
+.acoes a {
+  text-align: center;
+  color: var(--muted);
+  text-decoration: none;
+}
+.acoes a:hover { color: var(--gold); text-decoration: underline; }

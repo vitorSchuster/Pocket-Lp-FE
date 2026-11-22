@@ -1,0 +1,194 @@
+/* ===== PALETA (mesma da tela de configurações) ===== */
+:root {
+  --bg: #000000;
+  --surface: #160d21;     /* fundo dos cards */
+  --field: #2a1a3d;
+  --line: #3a2752;
+  --gold: #ffcc00;
+  --gold-hover: #ffd93a;
+  --text: #f3eefa;
+  --muted: #9b8db3;
+  --radius: 14px;
+
+  /* degradê da home: preto no topo, roxo no meio, preto no fim */
+  --degrade: linear-gradient(180deg, #000000 0%, #1a0030 30%, #2e0058 55%, #12001f 80%, #000000 100%);
+}
+
+/* ===== BASE ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 48px 24px 64px;
+  background: var(--degrade) no-repeat;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* ===== TOPO ===== */
+.topo { text-align: center; }
+.topo h1 { margin: 0 0 8px; font-size: 2.25rem; }
+.topo p { margin: 0; color: var(--muted); }
+
+/* ===== CARDS DOS PLANOS ===== */
+.planos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.plano {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: border-color .15s, transform .15s;
+}
+.plano:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.plano h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--gold);
+}
+
+.pessoas {
+  margin: 0;
+  padding: 2px 14px;
+  background: var(--field);
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.preco {
+  margin: 8px 0 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+.preco span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.plano ul {
+  width: 100%;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+.plano li::before {
+  content: "✓";
+  margin-right: 10px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* botão no fim do card (todos alinhados na mesma altura) */
+.botao {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: var(--gold);
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background .15s;
+}
+.botao:hover { background: var(--gold-hover); }
+
+/* ===== APOIE CRIADORES ===== */
+.apoie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+.apoie h2 { margin: 0; font-size: 2rem; }
+.apoie p { margin: 0; max-width: 520px; }
+.destaque { color: var(--gold); font-weight: 700; }
+
+.codigo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+.codigo .hash,
+.codigo input,
+.codigo button {
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--gold);
+  color: #000;
+}
+.codigo .hash {
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.codigo input {
+  font: inherit;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+.codigo input:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+.codigo button {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background .15s;
+}
+.codigo button:hover { background: var(--gold-hover); }
+.codigo svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.voltar {
+  margin-top: 8px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.voltar:hover { color: var(--gold); text-decoration: underline; }

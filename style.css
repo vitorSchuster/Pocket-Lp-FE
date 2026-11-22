@@ -3,7 +3,8 @@ body{
     margin: 0;
     height: 200vh;
     width: 100%;
-    background-color: black;
+    /*background-color: black;*/
+    background: linear-gradient(180deg, #000000 0%, #1a0030 30%, #2e0058 55%, #12001f 80%, #000000 100%) no-repeat;
 }
 .tela_principal{
     width: 100%;

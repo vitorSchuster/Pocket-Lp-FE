@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="telas.css">
+</head>
+<body>
+    <form action="">
+
+    <section class="perfil">
+        <h2>Conta</h2>
+        <img src="/assets/perfil-de-usuario.png" height="32px">
+        <button>Gerenciar Conta</button>
+        <div>Email: GiriaFavorita05@gmail.com</div>
+        <div>Telefone: 99 9967-4055</div>
+        <div>Modalidade de plano: Padrão</div>
+        <div>Ativar modo offline: <input type="checkbox"></div>
+    </section>
+    <br>
+    <section class="config">
+    <h2>Idioma</h2>
+    Idioma do sistema:
+    <select> <option value="af">Afrikaans</option>
+    <option value="cs">Čeština</option>
+    <option value="da">Dansk</option>
+    <option value="de">Deutsch</option>
+    <option value="el">Ελληνικά</option>
+    <option value="en">English</option>
+    <option value="es">Español (España)</option>
+    <option value="es-la">Español</option>
+    <option value="fi">Suomi</option>
+    <option value="fr">Français</option>
+    <option value="id">Bahasa Indonesia</option>
+    <option value="it">Italiano</option>
+    <option value="ja">日本語</option>
+    <option value="ko">한국어</option>
+    <option value="ms">Bahasa Melayu</option>
+    <option value="nb">Norsk</option>
+    <option value="nl">Nederlands</option>
+    <option value="pl">Polski</option>
+    <option value="pt-br">Português (Brasil)</option>
+    <option value="pt">Português (Portugal)</option>
+    <option value="ru">Русский</option>
+    <option value="sv">Svenska</option>
+    <option value="th">ภาษาไทย</option>
+    <option value="tl">Filipino</option>
+    <option value="tr">Türkçe</option>
+    <option value="zh-cn">中文(简体)</option>
+    <option value="zh-tw">中文(台灣)</option>
+    <option value="bn">বাংলা</option>
+    <option value="gu">ગુજરાતી</option>
+    <option value="hi">हिन्दी</option>
+    <option value="hr">Hrvatski</option>
+    <option value="hu">Magyar</option>
+    <option value="kn">ಕನ್ನಡ</option>
+    <option value="ml">മലയാളം</option>
+    <option value="mr">मराठी</option>
+    <option value="ne">नेपाली</option>
+    <option value="pa">ਪੰਜਾਬੀ</option>
+    <option value="si">සිංහල</option>
+    <option value="sk">Slovenčina</option>
+    <option value="ta">தமிழ்</option>
+    <option value="te">తెలుగు</option>
+    <option value="vi">Tiếng Việt</option>
+    <option value="zh-hk">中文(香港)</option>
+    <option value="bg">Български</option>
+    <option value="fr-ca">Français (Canada)</option>
+    <option value="ro">Română</option>
+    <option value="sr">Српски</option>
+    <option value="uk">Українська</option>
+    </select>
+    </section>
+
+
+    <section class="audio">
+        <h2>Áudio</h2>
+        Audio 3D: <input type="checkbox">
+      
+        Autoplay: <input type="checkbox">
+       
+        Qualidade do audio: 
+        <select>
+            <option value="auto">Automatica</option>
+            <option value="auto">Alta</option>
+            <option value="auto">Media</option>
+            <option value="auto">Baixa</option>
+            <option value="auto">Baixissima</option>
+        </select>
+      
+        Qualidade do audio baixado:
+         <select>
+            <option value="auto">Automatica</option>
+            <option value="auto">Alta</option>
+            <option value="auto">Media</option>
+            <option value="auto">Baixa</option>
+            <option value="auto">Baixissima</option>
+        </select>
+         
+    </section>
+
+    <!-- ==================== NOVAS SEÇÕES ==================== -->
+
+    <section class="reproducao">
+        <h2>Reprodução</h2>
+
+        <div class="opcao">
+            <label for="crossfade">Transição entre faixas (segundos)</label>
+            <input type="range" id="crossfade" name="crossfade" min="0" max="12" step="1" value="0">
+        </div>
+        <div class="opcao">
+            <label for="sem-pausas">Reprodução sem pausas</label>
+            <input type="checkbox" id="sem-pausas" name="sem_pausas">
+        </div>
+        <div class="opcao">
+            <label for="normalizar">Normalizar volume</label>
+            <input type="checkbox" id="normalizar" name="normalizar">
+        </div>
+        <div class="opcao">
+            <label for="pular-silencio">Pular silêncio entre faixas</label>
+            <input type="checkbox" id="pular-silencio" name="pular_silencio">
+        </div>
+        <div class="opcao">
+            <label for="letra">Mostrar letra da música</label>
+            <input type="checkbox" id="letra" name="letra" checked>
+        </div>
+        <div class="opcao">
+            <label for="volume-padrao">Volume padrão</label>
+            <input type="range" id="volume-padrao" name="volume_padrao" min="0" max="100" step="1" value="80">
+        </div>
+    </section>
+
+    <section class="equalizador">
+        <h2>Equalizador</h2>
+
+        <div class="opcao">
+            <label for="predefinicao">Predefinição</label>
+            <select id="predefinicao" name="predefinicao">
+                <option value="normal">Normal</option>
+                <option value="grave">Grave+</option>
+                <option value="vocal">Vocal</option>
+                <option value="agudos">Agudos+</option>
+                <option value="eletronica">Eletrônica</option>
+                <option value="rock">Rock</option>
+                <option value="acustico">Acústico</option>
+                <option value="personalizado">Personalizado</option>
+            </select>
+        </div>
+
+        <fieldset>
+            <legend>Bandas</legend>
+            <div class="banda">
+                <label for="banda-grave">Grave</label>
+                <input type="range" id="banda-grave" name="banda_grave" min="-6" max="6" step="1" value="0">
+            </div>
+            <div class="banda">
+                <label for="banda-medio-grave">Médio-grave</label>
+                <input type="range" id="banda-medio-grave" name="banda_medio_grave" min="-6" max="6" step="1" value="0">
+            </div>
+            <div class="banda">
+                <label for="banda-medio">Médio</label>
+                <input type="range" id="banda-medio" name="banda_medio" min="-6" max="6" step="1" value="0">
+            </div>
+            <div class="banda">
+                <label for="banda-medio-agudo">Médio-agudo</label>
+                <input type="range" id="banda-medio-agudo" name="banda_medio_agudo" min="-6" max="6" step="1" value="0">
+            </div>
+            <div class="banda">
+                <label for="banda-agudo">Agudo</label>
+                <input type="range" id="banda-agudo" name="banda_agudo" min="-6" max="6" step="1" value="0">
+            </div>
+        </fieldset>
+    </section>
+
+    <section class="aparencia">
+        <h2>Aparência</h2>
+
+        <div class="opcao">
+            <label for="tema">Tema</label>
+            <select id="tema" name="tema">
+                <option value="escuro">Escuro</option>
+                <option value="claro">Claro</option>
+                <option value="sistema">Seguir o sistema</option>
+            </select>
+        </div>
+        <div class="opcao">
+            <label for="cor-destaque">Cor de destaque</label>
+            <select id="cor-destaque" name="cor_destaque">
+                <option value="amarelo">Amarelo</option>
+                <option value="roxo">Roxo</option>
+                <option value="azul">Azul</option>
+                <option value="verde">Verde</option>
+                <option value="vermelho">Vermelho</option>
+            </select>
+        </div>
+        <div class="opcao">
+            <label for="tamanho-fonte">Tamanho do texto</label>
+            <select id="tamanho-fonte" name="tamanho_fonte">
+                <option value="pequeno">Pequeno</option>
+                <option value="medio" selected>Médio</option>
+                <option value="grande">Grande</option>
+            </select>
+        </div>
+        <div class="opcao">
+            <label for="capa-fundo">Usar a capa do álbum como fundo do player</label>
+            <input type="checkbox" id="capa-fundo" name="capa_fundo" checked>
+        </div>
+        <div class="opcao">
+            <label for="lista-compacta">Lista de faixas compacta</label>
+            <input type="checkbox" id="lista-compacta" name="lista_compacta">
+        </div>
+        <div class="opcao">
+            <label for="reduzir-animacoes">Reduzir animações</label>
+            <input type="checkbox" id="reduzir-animacoes" name="reduzir_animacoes">
+        </div>
+    </section>
+
+    <section class="armazenamento">
+        <h2>Armazenamento</h2>
+
+        <div class="opcao">
+            <label for="uso-downloads">Músicas baixadas</label>
+            <progress id="uso-downloads" value="0" max="100">0%</progress>
+            <span>0 MB usados</span>
+        </div>
+        <div class="opcao">
+            <span>Cache do aplicativo</span>
+            <button type="button">Limpar cache</button>
+        </div>
+        <div class="opcao">
+            <span>Downloads</span>
+            <button type="button">Apagar todos os downloads</button>
+        </div>
+    </section>
+
+    <section class="notificacoes">
+        <h2>Notificações</h2>
+
+        <div class="opcao">
+            <label for="notif-novidades">Novidades do aplicativo</label>
+            <input type="checkbox" id="notif-novidades" name="notif_novidades" checked>
+        </div>
+        <div class="opcao">
+            <label for="notif-conta">Avisos sobre a conta e o plano</label>
+            <input type="checkbox" id="notif-conta" name="notif_conta" checked>
+        </div>
+        <div class="opcao">
+            <label for="notif-email">Receber também por e-mail</label>
+            <input type="checkbox" id="notif-email" name="notif_email">
+        </div>
+    </section>
+
+    <section class="privacidade">
+        <h2>Privacidade</h2>
+
+        <div class="opcao">
+            <label for="perfil-publico">Perfil público</label>
+            <input type="checkbox" id="perfil-publico" name="perfil_publico">
+        </div>
+        <div class="opcao">
+            <label for="mostrar-ouvindo">Mostrar o que estou ouvindo</label>
+            <input type="checkbox" id="mostrar-ouvindo" name="mostrar_ouvindo">
+        </div>
+        <div class="opcao">
+            <label for="salvar-historico">Salvar histórico de reprodução</label>
+            <input type="checkbox" id="salvar-historico" name="salvar_historico" checked>
+        </div>
+        <div class="opcao">
+            <span>Histórico</span>
+            <button type="button">Limpar histórico de reprodução</button>
+        </div>
+    </section>
+
+    <section class="sobre">
+        <h2>Sobre</h2>
+
+        <div class="opcao">
+            <span>Versão do aplicativo</span>
+            <span>1.0.0</span>
+        </div>
+        <div class="opcao">
+            <a href="/termos.html">Termos de uso</a>
+        </div>
+        <div class="opcao">
+            <a href="/privacidade.html">Política de privacidade</a>
+        </div>
+        <div class="opcao">
+            <button type="button">Sair da conta</button>
+        </div>
+    </section>
+
+    <!-- ================== FIM DAS NOVAS SEÇÕES ================== -->
+
+    <section class="acoes">
+        <button type="submit">Salvar alterações</button>
+        <a href="/index.html">Voltar ao aplicativo</a>
+    </section>
+</form>
+
+</body>
+</html>

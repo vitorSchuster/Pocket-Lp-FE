@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos</title>
+    <link rel="stylesheet" href="estilo-planos.css">
+</head>
+<body>
+<main>
+
+    <header class="topo">
+        <h1>Escolha seu plano</h1>
+        <p>Remova os anúncios e ajude o artista que você ama.</p>
+    </header>
+
+    <!-- ===== CARDS DOS PLANOS ===== -->
+    <section class="planos">
+
+        <article class="plano">
+            <h2>Solo</h2>
+            <p class="pessoas">1 pessoa</p>
+            <p class="preco">R$ 00,00 <span>/ mês</span></p>
+            <ul>
+                <li>Sem anúncios</li>
+                <li>1 conta</li>
+                <li>50% do valor vai para o artista que você escolher</li>
+            </ul>
+            <a class="botao" href="/pagamento.html?plano=solo">Escolher Solo</a>
+        </article>
+
+        <article class="plano">
+            <h2>Duo</h2>
+            <p class="pessoas">2 pessoas</p>
+            <p class="preco">R$ 00,00 <span>/ mês</span></p>
+            <ul>
+                <li>Sem anúncios</li>
+                <li>2 contas</li>
+                <li>50% do valor vai para o artista que você escolher</li>
+            </ul>
+            <a class="botao" href="/pagamento.html?plano=duo">Escolher Duo</a>
+        </article>
+
+        <article class="plano">
+            <h2>Family</h2>
+            <p class="pessoas">4 pessoas</p>
+            <p class="preco">R$ 00,00 <span>/ mês</span></p>
+            <ul>
+                <li>Sem anúncios</li>
+                <li>4 contas</li>
+                <li>50% do valor vai para o artista que você escolher</li>
+            </ul>
+            <a class="botao" href="/pagamento.html?plano=family">Escolher Family</a>
+        </article>
+
+    </section>
+
+    <!-- ===== APOIE CRIADORES (campo de código do artista) ===== -->
+    <section class="apoie">
+        <h2>Apoie criadores!</h2>
+        <p>Ajude a apoiar o crescimento de artistas pequenos, insira o código do artista de sua escolha!</p>
+        <p><span class="destaque">50%</span> do valor gasto no app será doado ao artista escolhido :)</p>
+
+        <form class="codigo" action="">
+            <span class="hash" aria-hidden="true">#</span>
+            <input type="text" name="codigo1" maxlength="1" autocomplete="off" aria-label="Caractere 1 do código">
+            <input type="text" name="codigo2" maxlength="1" autocomplete="off" aria-label="Caractere 2 do código">
+            <input type="text" name="codigo3" maxlength="1" autocomplete="off" aria-label="Caractere 3 do código">
+            <input type="text" name="codigo4" maxlength="1" autocomplete="off" aria-label="Caractere 4 do código">
+            <button type="submit" aria-label="Enviar código">
+                <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+            </button>
+        </form>
+
+        <a class="voltar" href="/index.html">Voltar à tela principal</a>
+    </section>
+
+</main>
+</body>
+</html>
