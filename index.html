@@ -1,40 +1,295 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.cdnfonts.com/css/instrument-sans" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link
+      href="https://fonts.cdnfonts.com/css/instrument-sans"
+      rel="stylesheet"
+    />
     <title>Pocket-LP</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <main class="tela_principal">
-        <!--layout fixo esses 3-->
-        <aside class="sidebar">
-            <div class="logo"><img src="../assets/imagem_foda_vitrola_disco_amarelo.png"></div>
-            <section class="opcoes">
-                <div class="sb_perfil"><img src="../assets\perfil-de-usuario.png"></div>
-                 <div class="sb_perfil"><img src="../assets\adicionar-a-playlist.png"></div>
-                  <div class="sb_perfil"><img src="../assets\local-na-rede-internet.png "></div>
-                  <div class="sb_perfil"><img src="../assets\pagamento-com-cartao-de-credito.png"></div>
-                 <div class="sb_perfil"><img src="../assets\apoio-suporte.png"></div>
-                  <div class="sb_perfil"><img src="../assets\engrenagem.png"></div>
-            </section>
-        </aside>
-        <nav class="barra_nav"><input type="text" placeholder="Buscar"></nav>
-        
-        <!--player <-- bota a div do player aqui pois ficara fixo na tela-->
+      <!--layout fixo esses 3-->
+      <aside class="sidebar">
+        <div class="logo">
+          <img
+            src="assets/imagem_foda_vitrola_disco_amarelo.png"
+            alt="Pocket-LP"
+          />
+        </div>
+        <section class="opcoes">
+          <div class="sb_perfil">
+            <img src="assets/perfil-de-usuario.png" alt="Perfil" />
+          </div>
+          <div class="sb_perfil">
+            <img src="assets/adicionar-a-playlist.png" alt="Nova playlist" />
+          </div>
+          <div class="sb_perfil">
+            <img src="assets/local-na-rede-internet.png" alt="Explorar" />
+          </div>
+          <div class="sb_perfil">
+            <img
+              src="assets/pagamento-com-cartao-de-credito.png"
+              alt="Planos"
+            />
+          </div>
+          <div class="sb_perfil">
+            <img src="assets/apoio-suporte.png" alt="Suporte" />
+          </div>
+          <div class="sb_perfil">
+            <img src="assets/engrenagem.png" alt="Configurações" />
+          </div>
+        </section>
+      </aside>
+      <nav class="barra_nav"><input type="text" placeholder="Buscar" /></nav>
 
-        <!--layout movel-->
-        <section class="corpo"></section>
+      <section class="lineContent">
+        <div class="lineTxt">Para Você</div>
+        <section class="bands_carousel">
+          <div id="left_button"></div>
+          <div class="band_display"></div>
+          <div class="band_display"></div>
+          <div class="band_display"></div>
+          <div class="band_display"></div>
+          <div class="band_display"></div>
+          <div class="band_display"></div>
+          <div id="right_button"></div>
+        </section>
+      </section>
+
+      <section class="lineContent">
+        <div class="lineTxt">Artistas</div>
+        <section class="bands_carousel">
+          <div id="left_button"></div>
+          <div class="artist_display">
+            <img
+              class="artist_photo"
+              src="assets/artists_and_musics/Kanye_West_at_the_2009_Tribeca_Film_Festival_(crop_2).jpg"
+              alt="Kanye West"
+            />
+            <p class="card_title">Kanye West</p>
+            <p class="card_sub">Artista</p>
+          </div>
+          <div class="artist_display">
+            <img
+              class="artist_photo"
+              src="assets/artists_and_musics/Stevie_Wonder_1973.JPG"
+              alt="Stevie Wonder"
+            />
+            <p class="card_title">Stevie Wonder</p>
+            <p class="card_sub">Artista</p>
+          </div>
+          <div class="artist_display">
+            <img
+              class="artist_photo"
+              src="assets/artists_and_musics/Serj-Tankian-1_140cbd6f-3bcb-4246-91b4-99944b53e7c5_1600x.webp"
+              alt="Serj Tankian"
+            />
+            <p class="card_title">Serj Tankian</p>
+            <p class="card_sub">Artista</p>
+          </div>
+          <!-- TODO: trocar "Nome do artista" pelo nome certo destas 3 fotos -->
+          <div class="artist_display">
+            <img
+              class="artist_photo"
+              src="assets/artists_and_musics/a4e10b79a642e9891383448cbf37d7266a6883d6.jpg"
+              alt="Nome do artista"
+            />
+            <p class="card_title">Nirvana</p>
+            <p class="card_sub">Banda</p>
+          </div>
+          <div class="artist_display">
+            <img
+              class="artist_photo"
+              src="assets/artists_and_musics/images.jpg"
+              alt="Nome do artista"
+            />
+            <p class="card_title">Charlie Brown JR</p>
+            <p class="card_sub">Banda</p>
+          </div>
+          <div class="artist_display">
+            <img
+              class="artist_photo"
+              src="assets/artists_and_musics/ab6761610000e5eb1db35bc9c01d2b1c151e44ce.jpg"
+              alt="Nome do artista"
+            />
+            <p class="card_title">Foo Fighters</p>
+            <p class="card_sub">Banda</p>
+          </div>
+          <div id="right_button"></div>
+        </section>
+      </section>
+
+      <section class="lineContent">
+        <div class="lineTxt">Albuns</div>
+        <section class="bands_carousel">
+          <div id="left_button"></div>
+          <div class="album_display">
+            <div class="album_cover">
+              <img
+                src="assets/artists_and_musics/0x1900-000000-80-0-0.jpg"
+                alt="Capa do álbum Graduation"
+              />
+              <label class="play_album">
+                <input type="checkbox" class="play_toggle" />
+              </label>
+            </div>
+            <p class="card_title">Graduation</p>
+            <p class="card_sub">Kanye West</p>
+          </div>
+          <div class="album_display">
+            <div class="album_cover">
+              <img
+                src="assets/artists_and_musics/220px-SystemofaDownToxicityalbumcover.jpg"
+                alt="Capa do álbum Toxicity"
+              />
+              <label class="play_album">
+                <input type="checkbox" class="play_toggle" />
+              </label>
+            </div>
+            <p class="card_title">Toxicity</p>
+            <p class="card_sub">System of a Down</p>
+          </div>
+          <div class="album_display">
+            <div class="album_cover">
+              <img
+                src="assets/artists_and_musics/0x1900-000000-80-0-0 (1).jpg"
+                alt="Capa do álbum Acústico"
+              />
+              <label class="play_album">
+                <input type="checkbox" class="play_toggle" />
+              </label>
+            </div>
+            <p class="card_title">Acústico</p>
+            <p class="card_sub">Charlie Brown Jr.</p>
+          </div>
+          <div class="album_display">
+            <div class="album_cover">
+              <img
+                src="assets/artists_and_musics/ab67616d0000b2731dacfbc31cc873d132958af9.jpg"
+                alt="Capa do álbum Yeezus"
+              />
+              <label class="play_album">
+                <input type="checkbox" class="play_toggle" />
+              </label>
+            </div>
+            <p class="card_title">Yeezus</p>
+            <p class="card_sub">Kanye West</p>
+          </div>
+          <div class="album_display">
+            <div class="album_cover">
+              <img
+                src="assets/artists_and_musics/Capa-Slipknot-Slipknot.webp"
+                alt="Capa do álbum Slipknot"
+              />
+              <label class="play_album">
+                <input type="checkbox" class="play_toggle" />
+              </label>
+            </div>
+            <p class="card_title">Slipknot</p>
+            <p class="card_sub">Slipknot</p>
+          </div>
+          <div class="album_display">
+            <div class="album_cover">
+              <img
+                src="assets/artists_and_musics/5855348.webp"
+                alt="Capa do álbum The Marshall Mathers LP 2"
+              />
+              <label class="play_album">
+                <input type="checkbox" class="play_toggle" />
+              </label>
+            </div>
+            <p class="card_title">The Marshall Mathers LP 2</p>
+            <p class="card_sub">Eminem</p>
+          </div>
+          <div id="right_button"></div>
+        </section>
+      </section>
+
+      <section class="lineContent">
+        <div class="lineTxt">Playlists</div>
+        <section class="bands_carousel">
+          <div id="left_button"></div>
+          <div class="playlist_display">
+            <label class="play_playlist">
+              <input type="checkbox" class="play_toggle" />
+            </label>
+          </div>
+          <div class="playlist_display">
+            <label class="play_playlist">
+              <input type="checkbox" class="play_toggle" />
+            </label>
+          </div>
+          <div class="playlist_display">
+            <label class="play_playlist">
+              <input type="checkbox" class="play_toggle" />
+            </label>
+          </div>
+          <div class="playlist_display">
+            <label class="play_playlist">
+              <input type="checkbox" class="play_toggle" />
+            </label>
+          </div>
+          <div class="playlist_display">
+            <label class="play_playlist">
+              <input type="checkbox" class="play_toggle" />
+            </label>
+          </div>
+          <div class="playlist_display">
+            <label class="play_playlist">
+              <input type="checkbox" class="play_toggle" />
+            </label>
+          </div>
+          <div id="right_button"></div>
+        </section>
+      </section>
+
+      <section class="playlists"></section>
+
+      <!--player <-- bota a div do player aqui pois ficara fixo na tela-->
+      <div class="player">
+        <div class="player_left">
+          <div class="player_actions">
+            <div id="like_track" class="player_icon">
+              <img src="assets/contorno-em-forma-de-coracao.png" alt="Curtir" />
+            </div>
+            <div id="add_to_playlist" class="player_icon">
+              <img src="assets/mais.png" alt="Adicionar à playlist" />
+            </div>
+            <div id="share" class="player_icon">
+              <img src="assets/compartilhar.png" alt="Compartilhar" />
+            </div>
+          </div>
+          <div id="volume">
+            <img src="assets/volume-white-icon.png" alt="Volume" />
+          </div>
+        </div>
+
+        <!-- controles -->
+        <div class="player_center">
+          <div id="go_back"></div>
+          <div id="play"></div>
+          <div id="go_foward"></div>
+        </div>
+
+        <!-- informações da música -->
+        <div class="player_right">
+          <div class="music_info">
+            <p id="music_title">Nome da música</p>
+            <p id="music_artist">Nome do artista</p>
+          </div>
+          <div id="music_cover"></div>
+        </div>
+      </div>
+      <!--layout movel-->
+      <section class="corpo"></section>
     </main>
-    
-    <nav><h1>teste</h1></nav>
 
-    
     <!--<div class="pai-de-todos">
      <section class="sidebar">
 
@@ -52,7 +307,5 @@
         </div>
     </div>
    </div> -->
-
-</body>
-
+  </body>
 </html>
